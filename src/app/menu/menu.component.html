@@ -10,7 +10,7 @@ fxLayoutGap="10px"
 </div>
 <div fxFlex>
   <mat-grid-list cols="2" rowHeigth="200px">
-    <mat-grid-tile *ngFor="let dish of dishes" (click)="onSelect(dish)">
+    <mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail',dish.id]">
       <img height="200px" matListAvatar src={{dish.image}} alt={{dish.name}}>
       <mat-grid-tile-footer>
         <h1 >{{dish.name| uppercase}}</h1>
@@ -20,7 +20,7 @@ fxLayoutGap="10px"
     </mat-grid-tile>
   </mat-grid-list>
 </div>
-<div fxFlex *ngIf="selectedDish">
+<!--<div fxFlex *ngIf="selectedDish">
   <app-dishdetail [dish]="selectedDish"></app-dishdetail>
-</div>
+</div>-->
 </div>
